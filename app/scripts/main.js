@@ -22,24 +22,16 @@ import Home from './components/home';
 /**
  * We can start our initial App here in the main.js file
  */
-class App extends React.Component {
 
-    /**
-     * Renders the default app in the window, we have assigned this to an element called root.
-     * 
-     * @returns JSX
-     * @memberof App
-    */
-    render() {
-        return (
-            <div className="App">
-                <Menu />
-                <Home />
-            </div>
-        );
-    }
-
+const App = () =>{
+    return (
+        <div className="App">
+        <Menu />
+        <Home />
+    </div>
+    )
 }
+
 
 // Render this out
 const container = document.getElementById('root');

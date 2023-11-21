@@ -1,0 +1,26 @@
+div.item{
+    display: flex;
+    flex-direction: column;
+    grid-column: span 3;
+
+    img{
+        max-height: 286.8px;
+        max-width: 200px;
+        align-self: 0;
+        margin: 0 auto;
+    }
+
+    p{
+        text-align: center;
+
+        &.item-name{
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+
+        &.tags{
+            font-size: 1.2em;
+        }
+    }
+
+}
