@@ -4,6 +4,10 @@ div.item{
     grid-column: span 3;
 
     img{
+        &:hover{
+        cursor: pointer;
+        filter:drop-shadow(2.5px 2.5px gray);
+        }
         max-height: 286.8px;
         max-width: 200px;
         align-self: 0;
