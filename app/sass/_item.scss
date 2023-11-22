@@ -24,3 +24,9 @@ div.item{
     }
 
 }
+
+@media  (max-width: 960px){
+    div.item{
+        grid-column: span 6;
+    }
+}
