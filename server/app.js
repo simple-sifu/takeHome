@@ -40,14 +40,12 @@ app.use(cors());
 
 app.get('/item',  (req, res, next) => {
     try{
-        // console.log(data);
-        // console.log(req.body);
-        console.log("Inside get function");
         const query = req.query.query.toLowerCase();
         const item = [];
         for (let i = 0; i < data.length; i++){
             console.log(data[i].name);
-            if (data[i].name.toLowerCase().includes(query)){
+            if (data[i].name.toLowerCase().includes(query) || 
+            data[i].tags.includes(query)){
                 item.push(data[i]);
             }
         }
