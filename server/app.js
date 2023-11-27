@@ -44,8 +44,8 @@ app.get('/item',  (req, res, next) => {
         const item = [];
         for (let i = 0; i < data.length; i++){
             console.log(data[i].name);
-            if (data[i].name.toLowerCase().includes(query) || 
-            data[i].tags.includes(query)){
+            if ((data[i].name.toLowerCase().includes(query) || 
+            data[i].tags.includes(query)) && data[i].isActive === "true"){
                 item.push(data[i]);
             }
         }
@@ -56,7 +56,6 @@ app.get('/item',  (req, res, next) => {
         return error;
     }
 }, (req, res) => {
-    console.log("inside second function within get");
     return res.status(201).json(res.locals.item);
 })
 
@@ -67,26 +66,4 @@ app.use((req, res) => {
 app.listen(port, () => {
     console.log(`Listening on PORT: ${port}`);
 })
-/** 
- * Start the Node Server Here...
- * 
- * The http.createServer() method creates a new server that listens at the specified port.  
- * The requestListener function (function (req, res)) is executed each time the server gets a request. 
- * The Request object 'req' represents the request to the server.
- * The ServerResponse object 'res' represents the writable stream back to the client.
- */
-// http.createServer(function (req, res) {
-//     // .. Here you can create your data response in a JSON format
-//     if (req.method === "GET"){
-//         handleGetRequest(req,res);
-//     }
-    
-//     res.write("Response goes in here..."); // Write out the default response
-//     res.end(); //end the response
-// }).listen( port );
 
-// function handleGetRequest(req, res){
-//     console.log("Inside get request");
-// }
-
-// console.log(`[Server running on ${hostname}:${port}]`);

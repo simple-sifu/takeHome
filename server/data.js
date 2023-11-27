@@ -1,7 +1,7 @@
 var data = [
     {
         "_id": "001",
-        "isActive": "true",
+        "isActive": "false",
         "price": "20.00",
         "picture": "/img/products/N0CA_430.png",
         "name": "Damage Reverse Oil Conditioner",
