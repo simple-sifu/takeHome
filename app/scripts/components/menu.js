@@ -18,7 +18,6 @@ const Menu = () => {
   };
 
   const onSearch = (e) => {
-    console.log(e.target.value);
     fetch(`http://localhost:3035/item?query=${e.target.value}`, {
       method: 'GET',
       headers: {
