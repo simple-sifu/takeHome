@@ -64,6 +64,8 @@ Here you will find the SCSS files, we use Sass on the project to compile down to
     npm run sass
 
 ### scripts
+<img width="1049" alt="image" src="https://github.com/xjqiu28/takeHome/assets/76609392/a6de797f-95bd-4a2f-9576-0f4ca6eb5158">
+
 
 All of the Javascript can be found in here. The Webpack setup can be found in the 'config/webpack.config.js' file. These files are ran with the '[@babel/preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)' and '[@babel/preset-react](https://www.npmjs.com/package/@babel/preset-react)' loaders, which will enable you to write ES2017 and/or React Code.
 
