@@ -3,10 +3,13 @@
  *
  */
 import React from 'react';
+import Menu from './Menu';
+import '../styles/_home.scss'
 
 const Home = () => {
   return (
     <section id="home">
+      <Menu />
     </section>
   );
 };

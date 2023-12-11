@@ -2,13 +2,14 @@
  * The menu is technically the header of the site, it contains the styles for the drop down of the Search Bar.
  *
  */
-
+$siteWidth: 1280px;
 $lineHeightForNav: 70px;
 $lineHeightForSearch: 50px;
 
 
-header.menu {
 
+
+header.menu {
     // ...
     width: 100%;
     position: relative;

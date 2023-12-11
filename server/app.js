@@ -25,38 +25,30 @@ const express = require('express');
 const path = require('path');
 const app = express();
 app.use(express.json());
-const data      = require('./data');
 const http      = require('http');
 const hostname  = 'localhost';
 const port      = 3035;
 const cors = require('cors');
+const productController = require('./controllers/productControllers');
 
 
-
-app.get('/', (req, res) => {
-    return res.status(200).send("Hello, World!").end();
-});
 app.use(cors());
 
-app.get('/item',  (req, res, next) => {
+
+app.get('/item',  productController.getitem, (req, res) => {
+    return res.status(201).json(res.locals.item);
+})
+
+app.get('/products',  (req, res, next) => {
     try{
-        const query = req.query.query.toLowerCase();
-        const item = [];
-        for (let i = 0; i < data.length; i++){
-            console.log(data[i].name);
-            if ((data[i].name.toLowerCase().includes(query) || 
-            data[i].tags.includes(query)) && data[i].isActive === "true"){
-                item.push(data[i]);
-            }
-        }
-        console.log(item);
-        res.locals.item = item;
+        const items  = data;
+        res.locals.items = items;
         return next();
     }catch(error){
         return error;
     }
 }, (req, res) => {
-    return res.status(201).json(res.locals.item);
+    return res.status(201).json(res.locals.items);
 })
 
 app.use((req, res) => {

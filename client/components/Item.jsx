@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/_item.scss'
 
 const Item = (props) => {
   const { picture, name, price, tags } = props;

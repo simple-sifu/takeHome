@@ -3,7 +3,8 @@
  *
  */
 import React, { useState } from 'react';
-import Item from './item';
+import Item from './Item';
+import '../styles/_menu.scss'
 
 const Menu = () => {
   const [showingSearch, setShowingSearch] = useState(false);
@@ -42,6 +43,7 @@ const Menu = () => {
         setItems(arr);
       });
   };
+  
 
   return (
     <header className="menu">
@@ -90,8 +92,9 @@ const Menu = () => {
           {items.length <= 4 ? (
             <>
               <p>
-                Displaying {items.length} of {items.length} results
+                Displaying {items.length} of {items.length} results <a href="/products">Display All</a>
               </p>
+
               <div className="items-container">
                 {items.slice(0,4).map((item, index) => (
                   <div key={index} className='item'>
@@ -102,7 +105,7 @@ const Menu = () => {
             </>
           ) : (
             <>
-              <p>Displaying 4 of {items.length} results</p>
+              <p>Displaying 4 of {items.length} results <a href="/products">Display All</a></p>
               <div className="items-container">
                 {items.slice(0,4).map((item, index) => (
                   <div key={index} className="item">
