@@ -34,6 +34,7 @@ const productController = require('./controllers/productControllers');
 
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, '../client/assets')))
 
 app.get('/item',  productController.getitem, (req, res) => {
     return res.status(201).json(res.locals.item);
